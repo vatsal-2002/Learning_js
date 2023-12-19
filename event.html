@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<body>
+<h1>JavaScript HTML Events</h1>
+<h2>The onclick Attribute</h2>
+
+<!-- on click -->
+<p>Click the button to display the date.</p>
+<button onclick="displayDate()">Time is?</button>
+
+<!-- on change -->
+<p>Modify the text in the input field, then click outside the field to fire the onchange event.</p>
+Enter some text: <input type="text" name="txt" value="Hello" onchange="myFunction(this.value)">
+
+<!-- onmouseOver and onmouseOut -->
+<p>Use the addEventListener() method to attach a "mouseover" and "mouseout" event to a h1 element.</p>
+<h1 id="demo">Mouse over me</h1>
+
+<script>
+// on click
+function displayDate() {
+  document.getElementById("demo").innerHTML = Date();
+}
+
+// on change
+function myFunction(val) {
+  alert("The input value has changed. The new value is: " + val);
+}
+
+// onmouseover and onmouseout
+document.getElementById("demo").addEventListener("mouseover", mouseOver);
+document.getElementById("demo").addEventListener("mouseout", mouseOut);
+
+function mouseOver() {
+  document.getElementById("demo").style.color = "red";
+}
+
+function mouseOut() {
+  document.getElementById("demo").style.color = "black";
+}
+
+</script>
+
+<p id="demo"></p>
+
+</body>
+</html> 
